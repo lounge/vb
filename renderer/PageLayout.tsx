@@ -2,7 +2,7 @@ import React from 'react'
 import logo from './logo.svg'
 import { PageContextProvider } from './usePageContext'
 import type { PageContext } from './types'
-import './PageLayout.css'
+import './PageLayout.scss'
 import { Link } from './Link'
 
 export { PageLayout }

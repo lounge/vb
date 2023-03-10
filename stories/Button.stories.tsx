@@ -17,26 +17,25 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  style: 'primary',
+  primary: true,
   label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  style: 'secondary',
   label: 'Button',
 };
 
-export const Ghost = Template.bind({});
-Ghost.args = {
-  style: 'ghost',
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
   label: 'Button',
 };
 
-export const Bare = Template.bind({});
-Bare.args = {
-  style: 'bare',
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
   label: 'Button',
 };
- 

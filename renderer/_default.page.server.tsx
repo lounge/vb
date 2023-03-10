@@ -1,6 +1,6 @@
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
-import { PageLayout } from '../layouts/Layout'
+import { SrkLayout } from '../layouts/SrkLayout'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
 import logoUrl from '../src/logo.svg'
 import type { PageContextServer } from './types'
@@ -12,9 +12,9 @@ export const passToClient = ['pageProps', 'urlPathname']
 async function render(pageContext: PageContextServer) {
   const { Page, pageProps } = pageContext
   const pageHtml = ReactDOMServer.renderToString(
-    <PageLayout pageContext={pageContext}>
+    <SrkLayout pageContext={pageContext}>
       <Page {...pageProps} />
-    </PageLayout>
+    </SrkLayout>
   )
 
   // See https://vite-plugin-ssr.com/head

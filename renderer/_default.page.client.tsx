@@ -1,6 +1,6 @@
 import React from 'react'
 import { hydrateRoot } from 'react-dom/client'
-import { PageLayout } from '../layouts/Layout'
+import { SrkLayout } from '../layouts/SrkLayout'
 import type { PageContextClient } from './types'
 
 export { render }
@@ -9,9 +9,9 @@ async function render(pageContext: PageContextClient) {
   const { Page, pageProps } = pageContext
   hydrateRoot(
     document.getElementById('main-content')!,
-    <PageLayout pageContext={pageContext}>
+    <SrkLayout pageContext={pageContext}>
       <Page {...pageProps} />
-    </PageLayout>
+    </SrkLayout>
   )
 }
 

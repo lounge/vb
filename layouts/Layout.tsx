@@ -1,11 +1,11 @@
 import React from 'react'
-import logo from './logo.svg'
-import { PageContextProvider } from './usePageContext'
-import type { PageContext } from './types'
-import './PageLayout.scss'
-import { Link } from './Link'
+import logo from '../src/logo.svg'
+import { PageContextProvider } from '../renderer/usePageContext'
+import type { PageContext } from '../renderer/types'
+import './Layout.scss'
+import { Link } from '../components/Link'
 
-export { PageLayout }
+export { PageLayout, SbLayout }
 
 function PageLayout({ children, pageContext }: { children: React.ReactNode; pageContext: PageContext }) {
   return (
@@ -24,6 +24,25 @@ function PageLayout({ children, pageContext }: { children: React.ReactNode; page
           <Content>{children}</Content>
         </Layout>
       </PageContextProvider>
+    </React.StrictMode>
+  )
+}
+
+function SbLayout({ children }: { children: React.ReactNode; }) {
+  return (
+    <React.StrictMode>
+        <Layout>
+          <Sidebar>
+            <Logo />
+            <Link className="navitem" href="/">
+              Home
+            </Link>
+            <Link className="navitem" href="/about">
+              About
+            </Link>
+          </Sidebar>
+          <Content>{children}</Content>
+        </Layout>
     </React.StrictMode>
   )
 }

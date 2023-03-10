@@ -1,8 +1,8 @@
 import ReactDOMServer from 'react-dom/server'
 import React from 'react'
-import { PageLayout } from './PageLayout'
+import { PageLayout } from '../layouts/Layout'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr'
-import logoUrl from './logo.svg'
+import logoUrl from '../src/logo.svg'
 import type { PageContextServer } from './types'
 
 export { render }
@@ -32,7 +32,7 @@ async function render(pageContext: PageContextServer) {
         <title>${title}</title>
       </head>
       <body>
-        <div id="page-view">${dangerouslySkipEscape(pageHtml)}</div>
+        <main id="main-content">${dangerouslySkipEscape(pageHtml)}</main>
       </body>
     </html>`
 

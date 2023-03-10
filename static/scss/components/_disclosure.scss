@@ -1,0 +1,46 @@
+$s: toRem(10);
+
+.disclosure {
+    cursor: pointer;
+    border-bottom: 1px solid $color-neutral-e4;
+    font-family: $font-family-bold;
+    font-size: toRem(18);
+}
+
+.disclosure summary {
+    display: block; // Disable marker
+    padding: 1rem 0;
+    padding-right: 2.5rem; // Avoid collision
+    position: relative;
+
+    &::after {
+        @include size($s);
+        border-right: 3px solid $color-neutral-black;
+        border-bottom: 3px solid $color-neutral-black;
+        content: '';
+        margin-left: 1ch;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 1rem;
+        top: calc(50% - #{$s});
+    }
+}
+
+summary::marker {
+    //color: red;
+    //font-size: 50px;
+}
+
+.disclosure[open] summary::after {
+    transform: scaleY(-1) rotate(45deg);
+    top: calc(50% - #{$s / 2});
+}
+
+.disclosure__content {
+    font-family: $font-family-regular;
+    margin-bottom: 1rem;
+
+    ul {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+ul,
+ol {
+    font-family: $font-family-regular;
+    font-size: toRem(18);
+}
+
+.list-bare {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

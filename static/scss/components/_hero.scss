@@ -1,0 +1,142 @@
+$bp: 'md';
+
+.hero {
+    margin-bottom: $spacing * 2;
+}
+
+@include media-breakpoint-up($bp) {
+    .hero__stack {
+        display: grid;
+    }
+
+    .hero__stack>* {
+        grid-area: 1 / 1;
+    }
+}
+
+.hero__container {
+    @extend .container;
+    max-width: $content-width-xl;
+}
+
+.hero__body {
+    @include media-breakpoint-up($bp) {
+        padding: 1rem;
+        align-self: center;
+    }
+}
+
+.hero__heading--inside {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    margin: 0;
+
+    @include media-breakpoint-up($bp) {
+        display: none;
+    }
+}
+
+.hero__heading--outside {
+    @include media-breakpoint-down($bp) {
+        display: none;
+    }
+}
+
+.hero__media {
+    img {
+        width: 100%;
+    }
+}
+
+.hero__img-wrap {
+    font-size: 0;
+
+    @include media-breakpoint-down($bp) {
+        position: relative;
+    }
+}
+
+.hero__heading {
+    color: $color-neutral-white;
+    font-family: $font-family-bold;
+    font-size: toRem(27);
+    font-size: clamp(toRem(27), calc(0.9rem + 3.625vw), toRem(56));
+    line-height: 1.85;
+
+    @include media-breakpoint-up(sm) {
+        max-width: 75%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 66.6%;
+    }
+
+    @include media-breakpoint-up(xl) { 
+        font-size: toRem(60);
+        max-width: 50%;
+    }
+}
+
+.hero__heading-bg {
+    background-color: var(--color-primary);
+    box-decoration-break: clone;
+    padding: 0.2em 0.5em;
+    padding-top: 0.1em;
+}
+
+.hero__preamble {
+    @include media-breakpoint-up($bp) {
+        color: $color-neutral-white;
+        font-size: toRem(20);
+        max-width: 50%;
+    }
+
+    @include media-breakpoint-up(xl) {
+        max-width: 33.3%;
+    }
+}
+
+.hero__preamble,
+.hero__link,
+.hero__ctas {
+    margin-top: 1rem;
+
+    @include media-breakpoint-up($bp) {
+        margin-top: 1.75rem;
+    }
+}
+
+.hero__ctas {
+    @include media-breakpoint-down(md) {
+        .btn {
+            max-width: 26rem;
+            margin: 1rem auto;
+            display: block;
+        }
+    }
+
+    @include media-breakpoint-up($bp) {
+        display: flex;
+        gap: $spacing;
+    }
+}
+
+.hero__gradient {
+    @include media-breakpoint-up($bp) {
+        @include gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0), horizontal);
+        width: 75%;
+    }
+}
+
+.hero__secondary-cta {
+    @include media-breakpoint-up($bp) {
+        background-color: transparent;
+        color: $color-neutral-white;
+        border-color: $color-neutral-white;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}

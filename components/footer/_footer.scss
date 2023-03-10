@@ -1,0 +1,157 @@
+@import "../static/scss/vendor/bootstrap/functions";
+@import "../static/scss/vendor/bootstrap/mixins";
+@import "../static/scss/vendor/bootstrap/variables";
+@import "../static/scss/vendor/bootstrap/grid";
+@import "../static/scss/vendor/bootstrap/containers";
+@import "../static/scss/vendor/bootstrap/variables";
+@import "../static/scss/abstracts/variables";
+
+
+.footer {
+    $sectionSpacing: 3.5rem;
+    $footerBorderColor: $color-neutral-75;
+    background-color: $color-neutral-3;
+    margin-top: auto;
+    color: $color-neutral-white;
+    font-family: $font-family-regular;
+    margin-top: $spacing * 2;
+
+    h2,
+    h3 {
+        color: $color-neutral-white;
+        font-family: $font-family-bold;
+    }
+
+    a,
+    p {
+        color: $color-neutral-white;
+    }
+
+    * + &__heading-small {
+        margin-top: 2rem;
+    }
+
+    &__heading-small {
+        margin-bottom: 0.5em;
+        display: block;
+        font-size: toRem(18);
+        font-family: $font-family-bold;
+        text-decoration: none;
+
+        a {
+            @extend .footer__heading-small;
+        }
+    }
+
+
+    &__section {
+        padding: $sectionSpacing 0;
+
+        &--main {
+            padding: $sectionSpacing*1.3 0;
+        }
+
+        &--logos {
+            background-color: $white;
+            padding: $sectionSpacing*0.45 0;
+        }
+    }
+
+    &__container {
+        @extend .container;
+        padding: 0;
+        margin: 0 auto;
+        margin-top: $spacing*2;
+
+        @include media-breakpoint-up(xl) {
+            max-width: $content-width-xl;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__content {
+        @extend .container-fluid;
+    }
+
+    &__content-inner {
+        &--header {
+            text-align: center;
+            margin: 0 auto;
+            max-width: $content-width-md;
+
+            h2 {
+                font-size: toRem(40);
+            }
+
+            p {
+                font-size: toRem(24);
+                margin-top: 1rem;
+            }
+        }
+
+        &--border-top {
+            border-top: 1px solid $footerBorderColor;
+            padding-top: $sectionSpacing;
+        }
+    }
+
+    &__row {
+        @extend .row;
+        @extend .gy-4;
+    }
+
+    &__col {
+        @extend .col-12;
+
+        &--half {
+            @extend .col-lg-6;
+        }
+
+        &--org {
+            @extend .col-auto;
+            @extend .col-lg-3;
+        }
+
+        &--contact {
+            @extend .col-auto;
+            @extend .col-md-9;
+        }
+    }
+
+    &__sme {
+        margin-top: 1.5rem;
+    }
+
+    &__diagram {
+        margin-top: 2rem;
+    }
+
+    &__box {
+        text-align: center;
+        border: 1px solid $footerBorderColor;
+        padding: 2rem;
+        height: 100%;
+
+        h3 {
+            font-size: toRem(24);
+            margin-bottom: 1em;
+        }
+    }
+
+    &__logos {
+        display: flex;
+        justify-content: space-between;
+
+        a,
+        img {
+            display: block;
+        }
+    }
+
+    &__button {
+        margin-top: 2.5rem;
+    }
+}

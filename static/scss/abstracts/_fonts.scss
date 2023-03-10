@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'FuturaBT';
+  src: url('../../fonts/FuturaBT-Book.woff2') format('woff2'),
+       url('../../fonts/FuturaBT-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// https://developer.chrome.com/blog/font-fallbacks/
+@font-face {
+  font-family: 'arial-adjusted';
+  src: local("Arial");
+  ascent-override: 120%;
+}
+
+@font-face {
+  font-family: 'FuturaBT-Bold';
+  src: url('../../fonts/FuturaBT-Bold.woff2') format('woff2'),
+       url('../../fonts/FuturaBT-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FuturaBT-Heavy';
+  src: url('../../fonts/FuturaBT-Heavy.woff2') format('woff2'),
+       url('../../fonts/FuturaBT-Heavy.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

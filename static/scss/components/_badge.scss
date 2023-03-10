@@ -1,0 +1,9 @@
+.badge {
+    background-color: $color-brand-red;
+    font-family: $font-family-bold;
+    font-size: toRem(14);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+}

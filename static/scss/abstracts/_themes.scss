@@ -1,0 +1,25 @@
+// Theme colors
+
+.theme-rednet {
+    --body-bg: var(--color-secondary);
+    --link-list-bg: #{$color-neutral-white};
+    --link-list-bg-icon: var(--color-secondary);
+    --video-desc-bg: transparent;
+    --video-desc-p: 0;
+}
+
+.theme-rkh {
+    --body-bg: #{$color-neutral-e4};
+    --video-desc-bg: transparent;
+    --video-desc-p: 0;
+}
+
+.theme-rkuf {
+    --video-desc-bg: transparent;
+    --video-desc-p: 0;
+}
+
+.theme-rkfh {
+    --video-desc-bg: transparent;
+    --video-desc-p: 0;
+}

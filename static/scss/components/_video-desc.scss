@@ -1,0 +1,18 @@
+.video-desc {
+    background-color: var(--video-desc-bg);
+    color: $color-neutral-black;
+    padding: var(--video-desc-p);
+    padding-top: 1rem;
+    padding-right: var(--video-desc-p);
+    padding-bottom: toRem(18);
+    padding-left: var(--video-desc-p);
+}
+
+.video-byline {
+    @extend .video-desc;
+}
+
+.video-desc + .video-byline {
+    padding-top: 0;
+    margin-top: toRem(-18);
+}

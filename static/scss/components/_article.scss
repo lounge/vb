@@ -1,0 +1,42 @@
+.article {
+    padding: 0 $spacing;
+    margin: 0 auto;
+    max-width: $content-width-md;
+}
+
+.article-metadata,
+.article-share {
+    color: $color-neutral-75;
+    font-size: toRem(16);
+
+    & > * {
+        color: $color-neutral-75;
+        font-size: toRem(16);
+    }
+}
+
+.article-metadata {
+    @extend .article;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.25rem;
+
+    .icon {
+        transform: translateY(2px);
+    }
+
+    @include media-breakpoint-up(sm) {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+.article-share {
+    @extend .article;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.25rem;
+    }
+}

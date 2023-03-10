@@ -1,0 +1,11 @@
+.arrow-link {
+    @include discrete-link;
+    color: $color-neutral-black;
+    display: block;
+    font-family: $font-family-heavy;
+    font-size: toRem(18);
+
+    &::after {
+        @include arrow-link;
+    }
+}

@@ -1,0 +1,8 @@
+.icon {
+    @include size(1rem);
+}
+
+.btn .icon {
+    @include size(1.25em);
+    transform: translateY(1px);
+}

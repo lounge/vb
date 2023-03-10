@@ -1,0 +1,8 @@
+@import './button';
+
+// For editor purposes
+.cta-link {
+    @extend .btn;
+    @extend .btn--primary;
+    margin-bottom: $spacing;
+}

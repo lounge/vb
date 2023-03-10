@@ -1,0 +1,64 @@
+.checkmark-list,
+.numbered-list {
+    margin-top: 2rem;
+    padding-left: 4.5rem;
+
+    li {
+        line-height: 1.5;
+        list-style-type: none;
+        margin-bottom: 2em;
+        position: relative;
+
+        &::before {
+            @include size(3rem);
+            border-radius: 50%;
+            position: absolute;
+            left: -4.5rem;
+            top: -0.5em;
+        }
+    }
+}
+
+.checkmark-list {
+    li {
+        &::before {
+            content:'';
+            background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%2354A800' stroke-width='2'><polyline points='20 6 9 17 4 12'></polyline></svg>");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            border: 2px solid $color-neutral-b;
+            display: block;
+        }
+    }
+}
+
+.numbered-list {
+    counter-reset: ol-counter;
+
+    li {
+        counter-increment: ol-counter;
+
+        &::before {
+            content: counter(ol-counter);
+            border: 2px solid $color-brand-red;
+            font-family: $font-family-heavy;
+            font-size: toRem(24);
+            line-height: 1.9;
+            text-align: center;
+        }
+    }
+}
+
+.dotted-list {
+    padding-left: 1.75rem;
+
+    li {
+        line-height: 1.5;
+        margin-bottom: 0.75em;
+
+        &::marker {
+            color: $color-brand-red;
+        }
+    }
+}

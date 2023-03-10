@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4 {
+    font-family: $font-family-heavy;
+}
+
+h1, .h1 {
+    font-size: toRem(42);
+    line-height: 1.2em;
+}
+
+h2, .h2 {
+    font-size: toRem(24);
+    line-height: 1.3em;
+}
+
+h3, .h3 {
+    font-size: toRem(18);
+    line-height: 1.3em;
+}
+
+.pre-heading {
+    color: $color-brand-red;
+    font-size: toRem(14);
+    font-family: $font-family-heavy;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+}

@@ -1,0 +1,58 @@
+// POSSIBLY NOT NEEDED AT ALL
+
+%fullAbsolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.card--gradient {
+    .card__link {
+        color: $color-neutral-white;
+
+        &:focus-visible .card__heading {
+            @include focus();
+        }
+
+        &:hover .card__img,
+        &:focus .card__img {
+            transform: scale(1.025);
+        }
+    }
+
+    .card__media {
+        overflow: hidden;
+        
+        &::before {
+            content: '';
+            @extend %fullAbsolute;
+            background: linear-gradient(
+                to bottom, 
+                rgba(0, 0, 0, 0) 15%, 
+                rgba(0, 0, 0, 0.8) 85%
+            );
+            z-index: 10;
+        }
+    }
+
+    .card__body {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        z-index: 20;
+    }
+
+    .card__heading {
+        display: inline-block;
+        font-family: $font-family-bold;
+        font-size: toRem(24);
+        padding-right: 1rem;
+        
+        &::after {
+            @include arrow-link;
+        }
+    }
+}
